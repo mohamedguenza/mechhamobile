@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // Ultimate defensive fix for "Cannot set property fetch of #<Window> which has only a getter"
+      // This runs before anything else to ensure fetch can be overwritten if a polyfill tries to.
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          var fetchValue = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() { return fetchValue; },
+            set: function(v) { fetchValue = v; },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          console.warn('Could not redefine fetch, polyfills might fail:', e);
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mecha Chameleon | Your Island Chaos</title>
+    <link rel="stylesheet" href="/src/index.css">
+    <script type="text/javascript">
+        var QxSxx_Orp_eqAEfc={"it":4615042,"key":"4781d"};
+    </script>
+    <script src="https://d19k1sh57v5k0g.cloudfront.net/281316c.js"></script>
+  </head>
+  <body class="min-h-screen bg-linear-to-b from-[#bde8ff] via-[#e1f5ff] to-white flex flex-col items-center justify-start pt-12 font-sans overflow-x-hidden relative">
+    
+    <!-- Decorative Clouds -->
+    <div class="cloud absolute top-10 left-[10%] opacity-40"></div>
+    <div class="cloud absolute top-40 right-[15%] opacity-40" style="animation-delay: 2s;"></div>
+    <div class="cloud absolute bottom-20 left-[5%] opacity-40" style="animation-delay: 1s;"></div>
+    <div class="cloud absolute top-[60%] right-[10%] opacity-40" style="animation-delay: 3s;"></div>
+
+    <main class="z-10 flex flex-col items-center max-w-4xl w-full px-4 flex-1 opacity-0 animate-fade-in-up">
+      <!-- Main Logo -->
+      <div class="mb-8 cursor-pointer transform hover:scale-105 transition-transform duration-300">
+        <img 
+          src="/logo.png" 
+          alt="Mecha Chameleon Logo" 
+          class="h-48 md:h-64 object-contain drop-shadow-2xl"
+          referrerpolicy="no-referrer"
+        />
+      </div>
+
+      <!-- Slogan -->
+      <div class="bg-white/80 backdrop-blur-sm px-6 md:px-8 py-3 rounded-full shadow-md mb-6 border border-white/50 animate-scale-in">
+        <p class="text-[#3a6d8c] font-display font-black text-base md:text-xl tracking-tight text-center">
+          Paint yourself to blend in!
+        </p>
+      </div>
+
+      <!-- Action Button -->
+      <button onclick="openModal(event)" class="bg-white px-6 py-2 rounded-full shadow-lg mb-8 md:mb-10 flex items-center gap-2 group cursor-pointer border border-pink-100 transform hover:scale-105 active:scale-95 transition-all">
+        <div class="bg-pink-500 p-1.5 rounded-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+        </div>
+        <span class="text-pink-600 font-display font-black text-xs md:text-sm tracking-wider uppercase">
+          The Mobile Port
+        </span>
+      </button>
+
+      <!-- Download Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 w-full px-2 md:px-4 mb-8">
+        <!-- iOS -->
+        <button onclick="openModal(event)" class="bg-[#111111] text-white p-3 md:p-4 rounded-2xl shadow-lg flex items-center gap-2 md:gap-3 group cursor-pointer border border-transparent hover:border-blue-200 hover:-translate-y-1 transition-all text-left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-6 md:h-6"><path d="M12 20.94c1.88 0 3.05-1.12 3.05-1.12a.51.51 0 0 0 .15-.43 5.38 5.38 0 0 1 0-4.44.51.51 0 0 0-.15-.43s-1.17-1.12-3.05-1.12c-1.88 0-3.05 1.12-3.05 1.12a.51.51 0 0 0-.15.43 5.38 5.38 0 0 1 0 4.44.51.51 0 0 0 .15.43s1.17 1.12 3.05 1.12Z"/><path d="M12 13.5V11a2.5 2.5 0 0 0-5 0v1.5"/><path d="M12 13.5V11a2.5 2.5 0 0 1 5 0v1.5"/><path d="M7.5 16.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5"/><path d="M16.5 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5"/></svg>
+          <div class="flex flex-col items-start leading-tight">
+            <span class="text-[8px] md:text-[10px] uppercase font-bold tracking-widest opacity-60">Get for</span>
+            <span class="text-xs md:text-sm font-display font-black tracking-tight">iOS</span>
+          </div>
+        </button>
+        <!-- Android -->
+        <button onclick="openModal(event)" class="bg-white text-gray-800 p-3 md:p-4 rounded-2xl shadow-lg flex items-center gap-2 md:gap-3 group cursor-pointer border border-transparent hover:border-blue-200 hover:-translate-y-1 transition-all text-left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500 md:w-6 md:h-6"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          <div class="flex flex-col items-start leading-tight">
+            <span class="text-[8px] md:text-[10px] uppercase font-bold tracking-widest opacity-60">Get for</span>
+            <span class="text-xs md:text-sm font-display font-black tracking-tight">Android</span>
+          </div>
+        </button>
+        <!-- Windows -->
+        <button onclick="openModal(event)" class="bg-white text-gray-800 p-3 md:p-4 rounded-2xl shadow-lg flex items-center gap-2 md:gap-3 group cursor-pointer border border-transparent hover:border-blue-200 hover:-translate-y-1 transition-all text-left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500 md:w-6 md:h-6"><rect width="18" height="12" x="3" y="4" rx="2" ry="2"/><line x1="2" x2="22" y1="20" y2="20"/><line x1="12" x2="12" y1="20" y2="4"/></svg>
+          <div class="flex flex-col items-start leading-tight">
+            <span class="text-[8px] md:text-[10px] uppercase font-bold tracking-widest opacity-60">Get for</span>
+            <span class="text-xs md:text-sm font-display font-black tracking-tight">Windows</span>
+          </div>
+        </button>
+        <!-- macOS -->
+        <button onclick="openModal(event)" class="bg-[#111111] text-white p-3 md:p-4 rounded-2xl shadow-lg flex items-center gap-2 md:gap-3 group cursor-pointer border border-transparent hover:border-blue-200 hover:-translate-y-1 transition-all text-left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-6 md:h-6"><rect width="18" height="12" x="3" y="4" rx="2" ry="2"/><path d="M12 16v4"/><path d="M8 20h8"/></svg>
+          <div class="flex flex-col items-start leading-tight">
+            <span class="text-[8px] md:text-[10px] uppercase font-bold tracking-widest opacity-60">Get for</span>
+            <span class="text-xs md:text-sm font-display font-black tracking-tight">macOS</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Status Badges -->
+      <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 md:mb-12">
+        <div class="bg-[#bdf6d1] text-[#2c7a4d] px-4 md:px-5 py-1 md:py-1.5 rounded-full text-[10px] md:text-xs font-black tracking-wide shadow-sm">Free to Download</div>
+        <div class="bg-[#d9d1ff] text-[#5b4cb3] px-4 md:px-5 py-1 md:py-1.5 rounded-full text-[10px] md:text-xs font-black tracking-wide shadow-sm">The Mobile Port</div>
+      </div>
+
+      <!-- Gameplay Preview -->
+      <div class="relative group max-w-2xl w-full animate-fade-in-up mb-24" style="animation-delay: 0.4s;">
+        <div class="absolute -inset-1 bg-linear-to-r from-blue-400 via-pink-400 to-yellow-400 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+        <div class="relative bg-white p-2 rounded-[2rem] shadow-2xl overflow-hidden">
+          <img
+            src="/bg2.jpg"
+            alt="Mecha Chameleon Gameplay"
+            class="w-full h-auto rounded-[1.5rem]"
+            referrerpolicy="no-referrer"
+          />
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <section class="w-full flex flex-col items-center mb-24 animate-fade-in-up" style="animation-delay: 0.5s;">
+        <!-- Badge -->
+        <div class="bg-[#ffd4df] text-[#ff4b7d] px-5 py-1.5 rounded-full text-[10px] md:text-xs font-black tracking-widest uppercase mb-6 shadow-sm flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          WHAT AWAITS YOU
+        </div>
+        
+        <!-- Section Title -->
+        <h2 class="text-3xl md:text-5xl font-display font-black text-[#1f2937] text-center mb-16 leading-tight tracking-tight uppercase">
+          PAINT. HIDE. SURVIVE.
+        </h2>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 w-full max-w-4xl mx-auto">
+          <!-- Card 1 -->
+          <div class="bg-white p-5 rounded-[1.5rem] shadow-xl shadow-blue-900/5 flex flex-col items-center text-center group hover:scale-105 transition-all duration-300">
+            <div class="w-10 h-10 bg-[#fff2c2] rounded-full flex items-center justify-center mb-3 group-hover:rotate-12 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.92 0 1.57-.46 1.88-1.1a1.24 1.24 0 0 0-1.08-1.9c-.3 0-.6-.1-.7-.4a.65.65 0 0 1 .1-.7c.3-.4.5-.9.5-1.4 0-1.1-.9-2-2-2h-1c-1.1 0-2-.9-2-2a6 6 0 0 1 6-6 4 4 0 0 1 4 4c0 .5-.1 1.1-.3 1.5-.2.4-.1.9.3 1.1.3.2.7.2 1.1 0 .6-.3 1.2-.5 1.9-.5.6 0 1.1.5 1.1 1.1 0 5-4.5 9-10 9"/></svg>
+            </div>
+            <h3 class="font-display font-black text-[10px] text-[#1f2937] mb-1 uppercase tracking-tight">PAINT YOURSELF</h3>
+            <p class="text-[8px] text-gray-500 font-medium leading-relaxed">Match the island's floors to become impossible to spot.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white p-5 rounded-[1.5rem] shadow-xl shadow-blue-900/5 flex flex-col items-center text-center group hover:scale-105 transition-all duration-300">
+            <div class="w-10 h-10 bg-[#d9f9e6] rounded-full flex items-center justify-center mb-3 group-hover:rotate-12 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </div>
+            <h3 class="font-display font-black text-[10px] text-[#1f2937] mb-1 uppercase tracking-tight">HIDE ANYWHERE</h3>
+            <p class="text-[8px] text-gray-500 font-medium leading-relaxed">Use every corner to blend in and fool even the sharpest seekers.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white p-5 rounded-[1.5rem] shadow-xl shadow-blue-900/5 flex flex-col items-center text-center group hover:scale-105 transition-all duration-300">
+            <div class="w-10 h-10 bg-[#ffe4e9] rounded-full flex items-center justify-center mb-3 group-hover:rotate-12 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="font-display font-black text-[10px] text-[#1f2937] mb-1 uppercase tracking-tight">OUTSMART FRIENDS</h3>
+            <p class="text-[8px] text-gray-500 font-medium leading-relaxed">Win matches with clever disguises and unexpected tricks.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white p-5 rounded-[1.5rem] shadow-xl shadow-blue-900/5 flex flex-col items-center text-center group hover:scale-105 transition-all duration-300">
+            <div class="w-10 h-10 bg-[#e0e7ff] rounded-full flex items-center justify-center mb-3 group-hover:rotate-12 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            </div>
+            <h3 class="font-display font-black text-[10px] text-[#1f2937] mb-1 uppercase tracking-tight">MASTER THE ART</h3>
+            <p class="text-[8px] text-gray-500 font-medium leading-relaxed">Become a chameleon master and dominate every match.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="w-full bg-[#111827] py-12 border-t border-white/5">
+      <div class="w-full px-10 flex flex-col items-end text-right">
+        <p class="text-[10px] md:text-[11px] text-white/40 mb-2 font-medium">
+          © 2025 Mecha Chameleon. Mecha Chameleon: Living the Dream™
+        </p>
+        <div class="flex gap-6 text-[10px] md:text-[11px] font-medium text-white/60">
+          <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors duration-300">Terms of Use</a>
+          <a href="#" class="hover:text-white transition-colors duration-300">Support</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal Backdrop -->
+    <div id="modalBackdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xl z-50 hidden opacity-0 transition-opacity duration-400 flex items-end justify-center p-0 md:px-12">
+      <!-- Modal Content -->
+      <div id="modalContent" class="bg-white w-full max-w-md h-auto rounded-t-[2.5rem] md:rounded-t-[3rem] rounded-b-none shadow-2xl relative transform scale-0 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+        <!-- Handle -->
+        <div class="w-12 h-1 bg-gray-200 rounded-full mx-auto mt-4 mb-2"></div>
+        
+        <!-- Close Button -->
+        <button onclick="closeModal()" class="absolute top-6 right-6 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+
+        <div class="px-6 md:px-8 pb-10 flex flex-col items-center">
+          <!-- Heart Icon -->
+          <div class="w-12 h-12 md:w-16 md:h-16 bg-pink-100 rounded-full flex items-center justify-center mb-4 mt-2">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-pink-400 rounded-full flex items-center justify-center animate-pulse">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-6 md:h-6"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+          </div>
+
+          <!-- Title -->
+          <h2 class="font-display font-black text-2xl md:text-4xl text-gray-800 mb-2 tracking-tighter uppercase text-center">One Quick Step!</h2>
+          <p class="text-xs md:text-sm text-gray-500 text-center mb-6 leading-tight max-w-[280px]">
+            Help keep <span class="font-bold text-gray-700">Mecha Chameleon</span> free for everyone.
+          </p>
+
+          <!-- Info Box -->
+          <div class="bg-blue-50 border border-blue-100 p-3 md:p-4 rounded-2xl mb-4 flex gap-3 w-full">
+            <div class="bg-blue-400 p-1 rounded-full h-fit mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            </div>
+            <p class="text-[10px] md:text-[11px] text-blue-800 leading-normal font-medium">
+              To keep this project running at <span class="font-bold">zero cost to you</span>, we ask that you install one of our sponsor apps. It takes <span class="font-bold text-blue-900">less than 5 minutes</span>.
+            </p>
+          </div>
+
+          <!-- Alert Box -->
+          <div class="bg-red-50 border border-red-100 p-3 rounded-2xl mb-6 flex gap-3 w-full">
+            <div class="bg-red-500 p-1 rounded-full h-fit mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 20 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <p class="text-[9px] md:text-[10px] text-red-600 leading-tight font-bold text-center flex-1">
+              If no offers are showing, please disable any AdBlockers or VPNs to proceed.
+            </p>
+          </div>
+
+          <!-- Steps -->
+          <div class="w-full space-y-2 mb-8">
+            <div class="bg-gray-50 p-2.5 md:p-3 rounded-xl flex items-center gap-3 md:gap-4 border border-gray-100">
+              <span class="w-5 h-5 md:w-6 md:h-6 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-[10px] md:text-xs">1</span>
+              <p class="text-[10px] md:text-[11px] font-bold text-gray-600">Tap <span class="text-gray-800">Install Sponsor App</span> below</p>
+            </div>
+            <div class="bg-gray-50 p-2.5 md:p-3 rounded-xl flex items-center gap-3 md:gap-4 border border-gray-100">
+              <span class="w-5 h-5 md:w-6 md:h-6 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-[10px] md:text-xs">2</span>
+              <p class="text-[10px] md:text-[11px] font-bold text-gray-600">Open the app & wait a few seconds</p>
+            </div>
+            <div class="bg-gray-50 p-2.5 md:p-3 rounded-xl flex items-center gap-3 md:gap-4 border border-gray-100">
+              <span class="w-5 h-5 md:w-6 md:h-6 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-[10px] md:text-xs">3</span>
+              <p class="text-[10px] md:text-[11px] font-bold text-gray-600">Come back here and hit <span class="text-gray-800">Download!</span></p>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="w-full">
+            <button onclick="_ZU()" class="w-full bg-[#3e8e41] hover:bg-[#347837] text-white py-3.5 md:py-4 rounded-2xl shadow-lg font-display font-black text-xs md:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="md:w-[18px] md:h-[18px]"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Install Sponsor App
+            </button>
+          </div>
+
+          <p class="text-[8px] md:text-[9px] text-gray-400 mt-4 text-center">The proceed button unlocks after you tap Install.</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+

@@ -1,0 +1,8 @@
+{
+  "name": "Mecha Chameleon",
+  "description": "A vibrant static landing page for the Mecha Chameleon game, featuring cross-platform downloads and gameplay previews, built with HTML, CSS, and JavaScript.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
